@@ -1,0 +1,35 @@
+# Local compiler, dependencies, compiled proofs and Python caches.
+/.lake
+/.tools
+__pycache__/
+*.pyc
+.DS_Store
+
+# Keep the current verification outcome, certificate and approval receipts.
+verification/*
+!verification/result.json
+!verification/certificate.json
+!verification/diagnostics.json
+!verification/reviews/
+verification/reviews/*
+!verification/reviews/*_review.json
+*.log
+
+# Document sources, archives and local build products.
+**/manuscript/
+**/archive/
+**/history/
+**/research_history/
+*.tex
+*.pdf
+*.bib
+*.bst
+*.sty
+*.cls
+*.aux
+*.bbl
+*.blg
+*.docx
+*.zip
+*.tar.gz
+*.tgz

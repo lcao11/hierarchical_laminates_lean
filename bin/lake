@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+task_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$task_root"
+if [ -x "$task_root/.tools/elan/bin/lake" ]; then
+  export ELAN_HOME="$task_root/.tools/elan"
+  export MATHLIB_CACHE_DIR="$task_root/.tools/mathlib-cache"
+  export PATH="$ELAN_HOME/bin:$PATH"
+  exec "$ELAN_HOME/bin/lake" "$@"
+fi
+system_lake=$(command -v lake || true)
+if [ -z "$system_lake" ] || [ "$system_lake" = "$task_root/bin/lake" ]; then
+  printf '%s\n' 'Install the pinned Lean toolchain; see SETUP.md.' >&2
+  exit 1
+fi
+exec "$system_lake" "$@"

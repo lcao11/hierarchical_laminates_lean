@@ -1,0 +1,13 @@
+name = "hierarchical_laminates"
+version = "1.0.0"
+license = "Apache-2.0"
+licenseFiles = ["LICENSE"]
+defaultTargets = ["HierarchicalLaminates"]
+
+[[require]]
+name = "mathlib"
+# The exact source revision and archive checksum are in dependency-lock.json.
+path = ".lake/packages/mathlib"
+
+[[lean_lib]]
+name = "HierarchicalLaminates"
