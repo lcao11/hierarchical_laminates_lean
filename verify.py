@@ -40,10 +40,11 @@ def configuration_hashes(root=ROOT):
     names = [
         "HierarchicalLaminates.lean", "lakefile.toml", "lake-manifest.json",
         "lean-toolchain", "dependency-lock.json", "bin/lake", ".gitignore",
-        "verify.py", "README.md", "SETUP.md", "LICENSE",
+        "verify.py", "README.md", "SETUP.md", "LICENSE", "CITATION.bib",
     ]
     paths = [root / name for name in names]
-    for folder, pattern in (("scripts", "*.py"), ("tests", "*.py"), ("docs", "*.md")):
+    for folder, pattern in (("scripts", "*.py"), ("tests", "*.py"),
+                            ("docs", "*.md"), ("docs", "*.pdf")):
         paths.extend(sorted((root / folder).rglob(pattern)))
     for path in paths:
         if path.is_symlink() or not path.resolve().is_relative_to(root.resolve()):

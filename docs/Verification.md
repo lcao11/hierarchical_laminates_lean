@@ -37,7 +37,7 @@ The verifier writes a certificate when every check passes. Failed or unfinished 
 
 ## Snapshot approvals
 
-Each review receipt records `approved: true` and the same five snapshot fields as the verification result: `main_targets`, `supporting_targets`, `source_sha256`, `configuration_sha256` and `dependency_lock_sha256`. Configuration covers the public aggregate, documentation, setup and verification tools. Changing a covered file requires approval of the resulting snapshot.
+Each review receipt records `approved: true` and the same five snapshot fields as the verification result: `main_targets`, `supporting_targets`, `source_sha256`, `configuration_sha256` and `dependency_lock_sha256`. Configuration covers the public aggregate, reader documentation, companion PDFs, manuscript citation, setup and verification tools. Changing a covered file requires approval of the resulting snapshot.
 
 ## Exit codes
 

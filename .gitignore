@@ -33,3 +33,9 @@ verification/reviews/*
 *.zip
 *.tar.gz
 *.tgz
+
+# Published companion documents and manuscript citation.
+!/CITATION.bib
+!/docs/companion/research-progress-report.pdf
+!/docs/companion/proof-exercises.pdf
+!/docs/companion/worked-answers.pdf

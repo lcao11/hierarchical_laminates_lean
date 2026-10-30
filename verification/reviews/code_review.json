@@ -1,14 +1,14 @@
 {
   "approved": true,
   "review_kind": "code",
-  "reviewed_utc": "2026-10-30T02:02:55.000004+00:00",
+  "reviewed_utc": "2026-10-30T02:53:25.405119+00:00",
   "review_method": "agent-assisted review",
-  "summary": "Reviewed the verification tools, publication references, reader documentation and exact-snapshot binding.",
+  "summary": "Reviewed the verification tools, citation metadata, published document integrity and reader documentation.",
   "review_scope": [
-    "Pinned build and environment setup, project imports, theorem-axiom auditing and required proof dependencies.",
-    "Proof and configuration hashing, exact-snapshot approvals, certificate generation and diagnostic classifications.",
-    "Apache license text and package metadata, reproduction instructions and public source interfaces.",
-    "Manuscript references, theorem correspondence, mathematical guide links and module comments."
+    "Configuration hashing and snapshot regression tests for the manuscript citation and companion PDFs.",
+    "Published PDF checksums, repository paths, citation fields and reader-guide links.",
+    "Build and environment checks, project imports, theorem-axiom auditing and required proof dependencies.",
+    "Exact-snapshot approvals, certificate generation and diagnostic classifications."
   ],
   "main_targets": [
     "HierarchicalLaminates.composite_counterexample",
@@ -285,16 +285,21 @@
     "HierarchicalLaminates/WeakCalculus/Parseval.lean": "5c41183718983772111e2d6bea80d2a43156cd85d80227a0b90719fd6e94d228"
   },
   "configuration_sha256": {
-    ".gitignore": "9ad016dfe82bd8d0337dd584530d67c06ead33c2bdc26fa780edee81ab592115",
+    ".gitignore": "a596f5f8bdb2deec4674e42a406bc7de25ab81b1663c54a3dc3bcad848a4df54",
+    "CITATION.bib": "e5d89c948d568b1bccc30e58c622dbda4d29b83637af8a25c5ca0e8fa8fe1f3c",
     "HierarchicalLaminates.lean": "b7d151c7a5288eab3d3ea5743b24d4d64675ccf6876aaaa98cfd0a790f30412e",
     "LICENSE": "a5d934c82c8089555c5680b7283b2e193ce22c9bd3b0cb54af1cf78fc9afa14b",
-    "README.md": "87262244c109f7977904f61d071bf3e5194c541672948f8a09176751c989c7f3",
+    "README.md": "2d6e682dfd1e93b4f0b0308a438b0051dc4a33dd67306cada59f699f9d26f57d",
     "SETUP.md": "b7c6a087181edc0d315db8a12245b2c3f47de53075f88b5413ce3c70c90b0d52",
     "bin/lake": "b5f16914460344588a379cc55dc6ba9b96e99a6caa6a13e2a26d6bc49dda88bf",
     "dependency-lock.json": "da5d4c0701e9d971eef7d479200d58f511d18cbeff86f0733e5f8efe6425e307",
     "docs/ProofGuide.md": "c4fe12aeacf11d004b683668430b4b8843d530c2d803ab51b56409d19f0f11c1",
     "docs/Statements.md": "8887d0fe180ea0d9303205b23c46a52369ce18eccd12528771f13df8d11ae2a1",
-    "docs/Verification.md": "f3cc34638d57c9c810f96f2d570c8f412b0156cbefbc87e09d49d1b02800e84a",
+    "docs/Verification.md": "80e82a450fb0ba66f8eadcbddfb3d6e31317bfeb4a44f073282b9223b8d16a9e",
+    "docs/companion/README.md": "951eaebbec783e6e575bfca287af8d8db88d47acbb2c25a0408c81b3bfc4726a",
+    "docs/companion/proof-exercises.pdf": "b6c2704deb2374ead1391369739b20370dffb342ff3d101788347801ba33b2fe",
+    "docs/companion/research-progress-report.pdf": "a28adc6200b87d1264405c9c5c6fc327efe7c6f4e82e9e55204c4fdc134a05d8",
+    "docs/companion/worked-answers.pdf": "5c6879b6f887253123d1a228c43d3b9f54268c3269fc3ba55195026e460545e3",
     "lake-manifest.json": "f0f41f0abf58ac0204593926043a204a11fa497350b2fded9e958eded21379c7",
     "lakefile.toml": "ec78a72b9546da90b09ceeaa805e8df84b53414ce187945afc41ab51cdfe92fa",
     "lean-toolchain": "d581a24b57a4ae9e0b2132ca8ac7cc3ac336a9fc2751fe6b29414e2d434d54c4",
@@ -308,8 +313,8 @@
     "scripts/setup_common.py": "5aff250d3a93466a6144acf75123429ce96c218bfe6483dcabbf4d2957adec78",
     "scripts/verification_artifacts.py": "a853eae0996534fc86dbca230dd48bc07787301f3d1d95d4aa9f4a2168d7764d",
     "scripts/verification_gate.py": "e61cd77715cf3b160f2c9cd8ec5d489cb6fce20a7875d18bbf1ac897d02ef66f",
-    "tests/test_verification_gate.py": "16fe7c4be7753bf8bfd21bbdc1e4a3e6d043ce7d5899c6b6751639617518bf86",
-    "verify.py": "c381c5a6b413082f80f5ebd695fb55ea4816afb94cd8435d202ecf0694df0d6b"
+    "tests/test_verification_gate.py": "3b80dd340f4d110e1bc156e59c865e909c9d5411779205d8e4067ecbd0e793c9",
+    "verify.py": "8b02c67df86be1d822be52f23c05155de183c2806237ebbf83b2c37af2beadf6"
   },
   "dependency_lock_sha256": "da5d4c0701e9d971eef7d479200d58f511d18cbeff86f0733e5f8efe6425e307"
 }

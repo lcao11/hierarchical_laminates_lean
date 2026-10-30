@@ -289,8 +289,10 @@ class StandaloneSnapshotChecks(unittest.TestCase):
         (root / "bin").mkdir()
         for name in ("HierarchicalLaminates.lean", "lakefile.toml", "lake-manifest.json",
                      "lean-toolchain", "dependency-lock.json", "bin/lake", ".gitignore",
-                     "verify.py", "README.md", "SETUP.md", "LICENSE"):
+                     "verify.py", "README.md", "SETUP.md", "LICENSE", "CITATION.bib"):
             (root / name).write_text("fixture\n")
+        (root / "docs/companion").mkdir(parents=True)
+        (root / "docs/companion/proof-exercises.pdf").write_bytes(b"%PDF-1.7\n%\xe2\xe3\xcf\xd3\nfixture\n")
         (root / "HierarchicalLaminates/Core.lean").write_text("theorem test : True := True.intro\n")
         return root
 
@@ -301,12 +303,22 @@ class StandaloneSnapshotChecks(unittest.TestCase):
             self.assertEqual(set(snapshot), set(SNAPSHOT_KEYS))
             self.assertEqual(set(snapshot["source_sha256"]), {"HierarchicalLaminates/Core.lean"})
             self.assertIn("LICENSE", snapshot["configuration_sha256"])
+            self.assertIn("CITATION.bib", snapshot["configuration_sha256"])
+            pdf = "docs/companion/proof-exercises.pdf"
+            self.assertEqual(snapshot["configuration_sha256"][pdf],
+                             hashlib.sha256((root / pdf).read_bytes()).hexdigest())
             self.assertTrue(all(not Path(name).is_absolute()
                                 for name in snapshot["configuration_sha256"]))
             before = deepcopy(snapshot)
             (root.parent / "unrelated-private-file.txt").write_text("private\n")
             self.assertEqual(current_snapshot(root), before)
             (root / "LICENSE").write_text("updated license\n")
+            self.assertNotEqual(current_snapshot(root), before)
+            before = current_snapshot(root)
+            (root / "CITATION.bib").write_text("updated citation\n")
+            self.assertNotEqual(current_snapshot(root), before)
+            before = current_snapshot(root)
+            (root / pdf).write_bytes((root / pdf).read_bytes() + b"changed\n")
             self.assertNotEqual(current_snapshot(root), before)
             before = current_snapshot(root)
             (root / "README.md").write_text("updated instructions\n")
